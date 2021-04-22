@@ -1,0 +1,6 @@
+/target/
+/.idea/
+/resources/
+
+#IDEA's files
+*.iml
