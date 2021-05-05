@@ -1,9 +1,5 @@
-package Math;
+package AlimMath;
 
-import org.scilab.forge.jlatexmath.TeXConstants;
-import org.scilab.forge.jlatexmath.TeXFormula;
-
-import java.awt.*;
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.List;
@@ -12,7 +8,6 @@ public class Polynomial {
 
     public static Map<Double, Double> findPolynomialByPoints(List<Double> x, List<Double> fx) {
         int size = x.size();
-        assert (size != fx.size());
 
         List<Map<Double, Double>> maps = new ArrayList<>(size);
 
@@ -47,7 +42,7 @@ public class Polynomial {
     public static List<Map<Double, Double>> createPolynomial(List<Double> x) {
         List<Map<Double, Double>> mapList = new ArrayList<>();
 
-        for(Double c : x) {
+        for (Double c : x) {
             Map<Double, Double> temp = new TreeMap<>();
 
             //put x : (x - c)
@@ -59,6 +54,7 @@ public class Polynomial {
         }
         return mapList;
     }
+
     /*
      * Раскроем скобки:
      * (x^2+3x+1)(x^3-2x-1)
@@ -90,8 +86,8 @@ public class Polynomial {
 
         assert !mapList.isEmpty();
 
-        while(mapList.size() > 1) {
-            Map<Double, Double> temp =  multiply(mapList.get(1), mapList.get(0));
+        while (mapList.size() > 1) {
+            Map<Double, Double> temp = multiply(mapList.get(1), mapList.get(0));
 
             mapList.remove(0);
             mapList.remove(0);
@@ -106,7 +102,7 @@ public class Polynomial {
         return map;
     }
 
-        /*
+    /*
      * Суммирует выражения из многочлена:
      * (x^5 - 2x^3 - x^2) + (3x^4 - 6x^2 - 3x) + (x^3 - 2x - 1)
      * В реализации используется словарь с сортировкой
@@ -161,16 +157,5 @@ public class Polynomial {
     }
 
 
-    /*
-        Выдаёт файл с формулой через LaTex в PNG формате
-     */
-    public static void printLatex(String latex) {
-        TeXFormula formula = new TeXFormula(latex);
-        formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, "target/ResultLatex.png", Color.WHITE, Color.BLACK);
-    }
 
-    public static void printLatex(String latex, String folderPath) {
-        TeXFormula formula = new TeXFormula(latex);
-        formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, folderPath, Color.WHITE, Color.BLACK);
-    }
 }

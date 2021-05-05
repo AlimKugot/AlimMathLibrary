@@ -1,4 +1,5 @@
-import Math.Polynomial;
+import AlimMath.Polynomial;
+import Printer.Latex;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +41,7 @@ public class PolynomialTest {
         List<Double> y = Arrays.asList(10.0,	40.0,   -34.0,	-11.0,	  4.0);
 
         Map<Double, Double> res = Polynomial.findPolynomialByPoints(x, y);
-        Polynomial.printLatex(Polynomial.toString(res));
+        Latex.printLatex(Polynomial.toString(res));
     }
 
     @Test
@@ -134,7 +135,7 @@ public class PolynomialTest {
         Assertions.assertEquals(-5.0, p.get(1.0));
         Assertions.assertEquals(-1.0, p.get(0.0));
 
-        Polynomial.printLatex(Polynomial.toString(p));
+        Latex.printLatex(Polynomial.toString(p));
     }
 
     @Test
@@ -157,7 +158,7 @@ public class PolynomialTest {
         String expResult = "f(x) = 1+x+x^2";
         Assertions.assertEquals(expResult, Polynomial.toString(p4));
 
-        Polynomial.printLatex(Polynomial.toString(p4));
+        Latex.printLatex(Polynomial.toString(p4));
     }
 
     //todo: write normal tests for latex
