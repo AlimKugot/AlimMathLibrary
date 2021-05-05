@@ -1,22 +1,22 @@
-package AlimMath;
+package alimMath;
 
-public class ByteAlgorithm {
+public class Coders {
 
-    public static int toCodeGray(int x) {
+    public static int codeGray(int x) {
         return (x > 0) ? x ^ (x >> 1) : 0;
     }
 
-    public static int fromCodeGray(String binaryX) {
+    public static int encodeGray(String binaryX) {
         int x = Integer.parseInt(binaryX, 2);
-        return fromCodeGray(x);
+        return encodeGray(x);
     }
 
-    public static StringBuffer fromCodeGray(String binaryX, StringBuffer buffer) {
+    public static StringBuffer encodeGray(String binaryX, StringBuffer buffer) {
         int x = Integer.parseInt(binaryX, 2);
-        return fromCodeGray(x, buffer);
+        return encodeGray(x, buffer);
     }
 
-    public static int fromCodeGray(int x) {
+    public static int encodeGray(int x) {
         int b;
         for (b = 0; x > 0; x >>= 1) {
             b ^= x;
@@ -24,7 +24,7 @@ public class ByteAlgorithm {
         return b;
     }
 
-    public static StringBuffer fromCodeGray(int x, StringBuffer buffer) {
+    public static StringBuffer encodeGray(int x, StringBuffer buffer) {
         int b = 0;
         int length = Integer.toBinaryString(x).length();
 

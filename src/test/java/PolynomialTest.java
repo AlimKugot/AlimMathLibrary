@@ -1,5 +1,5 @@
-import AlimMath.Polynomial;
-import Printer.Latex;
+import alimMath.Polynomial;
+import printer.Latex;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

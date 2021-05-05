@@ -1,4 +1,4 @@
-package AlimMath;
+package alimMath;
 
 
 public class Numbers {

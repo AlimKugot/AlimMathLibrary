@@ -1,4 +1,4 @@
-package Printer;
+package printer;
 
 import org.scilab.forge.jlatexmath.TeXConstants;
 import org.scilab.forge.jlatexmath.TeXFormula;
