@@ -3,6 +3,10 @@ package alimMath;
 /**
  * Methods to work with Coders from Discrete Math
  *
+ * Contains:
+ * Gray's code
+ * Reed Solomon error correction
+ *
  * @author Alim Kugotov
  */
 public final class Coders {

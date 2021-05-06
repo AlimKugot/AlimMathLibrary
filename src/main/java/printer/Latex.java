@@ -6,14 +6,14 @@ import org.scilab.forge.jlatexmath.TeXFormula;
 import java.awt.*;
 
 /**
- * Library to beautiful print in latex
+ * Library to beautiful print in the latex
  */
 public class Latex {
 
     /**
-     * Save file with the formula in PNG format
+     * Save file with the formula via PNG format
      *
-     * @param latex string to print in latex format
+     * @param latex string to print in the latex format
      */
     public static void printLatex(String latex) {
         TeXFormula formula = new TeXFormula(latex);
@@ -21,9 +21,9 @@ public class Latex {
     }
 
     /**
-     * Save file in the folder with the formula in PNG format
+     * Save file in the folder with the formula via PNG format
      *
-     * @param latex      string to print in latex format
+     * @param latex      string to print in the latex format
      * @param folderPath where to save
      */
     public static void printLatex(String latex, String folderPath) {

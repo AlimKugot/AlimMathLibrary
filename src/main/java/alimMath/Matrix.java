@@ -1,47 +1,47 @@
 package alimMath;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Methods to work with Matrices
  *
  * @author Alim Kugotov
  */
-
 public final class Matrix {
 
     /**
      * Find solving of linear equation via Cramer method
      *
      * @param matrix with size [row][row + 1]
-     * @param row    count of column in matrix
-     * @param column count of column in matrix
+     * @param row    count of the column in matrix
+     * @param column count of the column in matrix
+     * @return result, need to divide key on value
      */
-    static public void slauCramer(int[][] matrix, int row, int column) {
+    public static List<Fraction> slauCramer(int[][] matrix, int row, int column) {
+        if (column - row != 1 || row + column < 7) return null;
 
-        if (column - row != 1 || row + column < 7) return;
+        List<Fraction> res = new ArrayList<>();
 
-        // Детерминанта, что в знаменателе у всех переменных
-        int detAll = detMatrix(matrix, row);
+        // det[i] / detAll
+        long detAll = detMatrix(matrix, row);
 
         for (int i = 0; i < row; i++) {
             int[][] varMatrix = swapRowWithoutLast(matrix, row, column, i);
-            int detVariable = detMatrix(varMatrix, row);
+            long detVariable = detMatrix(varMatrix, row);
 
-            //упрощаем результат
-            long nod = Numbers.gcd(detVariable, detAll);
-            String varName = "x" + (i + 1);
-            String result = (detVariable / nod) + "/" + (detAll / nod);
-
-            System.out.println(varName + " = " + result);
+            res.add(new Fraction(detVariable, detAll));
         }
+        return res;
     }
 
     /**
-     * Расщипляет матрицы, пока не дойдёт до матрицы размером 3x3
-     * Реализация с помощью рекурсии
+     * Divide matrix via recursion until matrix size != 3
      *
-     * @param matrix - cube matrix
-     * @param size   - size of cube matrix
-     * @return determinant of matrix
+     * @param matrix cube matrix
+     * @param size   size of the cube matrix
+     * @return determinant of the matrix
+     * @throws ArrayIndexOutOfBoundsException if passed not cube matrix
      */
     public static int detMatrix(int[][] matrix, int size) {
 
@@ -64,7 +64,7 @@ public final class Matrix {
      * Find determinant via triangle method
      *
      * @param matrix with 3x3 size
-     * @return determinant of matrix
+     * @return determinant of the matrix
      */
     private static int detMatrix3x3(int[][] matrix) {
         int a11 = matrix[0][0];
@@ -91,7 +91,7 @@ public final class Matrix {
      * @param size         size of original matrix
      * @param exceptColumn not copy
      * @param exceptRow    not copy
-     * @return result of copying
+     * @return result of the copying
      */
     public static int[][] submatrix(int[][] matrix, int size, int exceptRow, int exceptColumn) {
         int[][] copy = new int[size - 1][size - 1];
@@ -122,7 +122,7 @@ public final class Matrix {
      * @param row          size
      * @param column       size
      * @param columnToSwap to swap with last column
-     * @return result of copying (matrix[row][column-1])
+     * @return result of the copying (matrix[row][column-1])
      */
     private static int[][] swapRowWithoutLast(int[][] matrix,
                                               int row, int column, int columnToSwap) {
@@ -147,7 +147,7 @@ public final class Matrix {
      * @param matrix original
      * @param row    size
      * @param column size
-     * @return result of copying
+     * @return result of the copying
      */
     public static int[][] copyMatrix(int[][] matrix, int row, int column) {
         int[][] copy = new int[row][column];
