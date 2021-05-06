@@ -1,26 +1,33 @@
 package alimMath;
 
+/**
+ * Methods to work with the Number Theory
+ *
+ * @author Alim Kugotov
+ */
+public final class Numbers {
 
-public class Numbers {
-
-    /*
-        НОД: алгоритм Евклида
-    */
+    /**
+     * Find gcd via Euclidean algorithm
+     *
+     * @param a - first number
+     * @param b - second number
+     * @return gcd of a and b
+     */
     public static long gcd(long a, long b) {
         if (b == 0) return Math.abs(a);
 
         return gcd(b, a % b);
     }
 
-    /*
-        Extended Euclidean algorithm
-     */
-
-
-    /*
-        НОК: использует связку с НОД
+    /**
+     * Find lcm via using gcd method
+     *
+     * @param a - first number
+     * @param b - second number
+     * @return lcm of a and b
      */
     public static long lcm(long a, long b) {
-        return (a > b) ? (a / gcd(a, b)) * b : (b / gcd(a, b)) * a ;
+        return (a > b) ? (a / gcd(a, b)) * b : (b / gcd(a, b)) * a;
     }
 }
