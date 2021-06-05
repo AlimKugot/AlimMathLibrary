@@ -1,4 +1,4 @@
-package alimMath;
+package alim.math;
 
 /**
  * Methods to work with Coders from Discrete Math

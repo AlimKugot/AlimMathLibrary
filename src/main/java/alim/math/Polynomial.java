@@ -1,4 +1,4 @@
-package alimMath;
+package alim.math;
 
 import java.text.DecimalFormat;
 import java.util.*;

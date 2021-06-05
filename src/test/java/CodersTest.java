@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import alimMath.Coders;
+import alim.math.*;
+import alim.math.numbers.*;
 
 public class CodersTest {
     int x1 = 154;

@@ -9,6 +9,7 @@ import java.awt.*;
  * Library to beautiful print in the latex
  */
 public class Latex {
+    public static final String DEFAULT_FOLDER_TO_SAVE = "target/ResultLatex.png";
 
     /**
      * Save file with the formula via PNG format
@@ -17,7 +18,7 @@ public class Latex {
      */
     public static void printLatex(String latex) {
         TeXFormula formula = new TeXFormula(latex);
-        formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, "target/ResultLatex.png", Color.WHITE, Color.BLACK);
+        formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, DEFAULT_FOLDER_TO_SAVE, Color.WHITE, Color.BLACK);
     }
 
     /**

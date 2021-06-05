@@ -1,4 +1,4 @@
-package alimMath;
+package alim.math.numbers;
 
 /**
  * Structure to hold fractions with simplifying
@@ -17,7 +17,7 @@ public final class Fraction {
      * @param denominator under
      */
     public Fraction(Long nominator, Long denominator) {
-        long gcd = Numbers.gcd(nominator, denominator);
+        long gcd = IntegerNumbers.gcd(nominator, denominator);
         if (nominator < 0 && denominator < 0) {
             nominator = Math.abs(nominator);
             denominator = Math.abs(denominator);

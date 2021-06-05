@@ -1,11 +1,11 @@
-package alimMath;
+package alim.math.numbers;
 
 /**
  * Methods to work with the Number Theory
  *
  * @author Alim Kugotov
  */
-public final class Numbers {
+public final class IntegerNumbers {
 
     /**
      * Find gcd via Euclidean algorithm

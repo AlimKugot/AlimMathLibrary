@@ -1,6 +1,7 @@
-import alimMath.Polynomial;
-import printer.Latex;
+import alim.math.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -11,10 +12,8 @@ public class PolynomialTest {
     static Map<Double, Double> p3 = new TreeMap<>();
     static Map<Double, Double> p4 = new TreeMap<>();
 
-    /*
-        initialize variables
-     */
-    static {
+    @BeforeAll
+    static void init() {
         // (x^5 - 2x^3 - x^2)
         p1.put(5.0, 1.0);
         p1.put(3.0, -2.0);
@@ -36,12 +35,11 @@ public class PolynomialTest {
         p4.put(2.0, 1.0);
     }
 
-    public static void main(String[] args) {
-        List<Double> x = Arrays.asList( 1.0,    -5.0,    -3.0,   -2.0,   -1.0);
-        List<Double> y = Arrays.asList(10.0,	40.0,   -34.0,	-11.0,	  4.0);
-
-        Map<Double, Double> res = Polynomial.findPolynomialByPoints(x, y);
-        Latex.printLatex(Polynomial.toString(res));
+    @Test
+    @DisplayName("Find Polynomial")
+    void findPolynomialByPoints() {
+        List<Integer> x = Arrays.asList(1,2,3);
+        List<Integer> fx = Arrays.asList(1,2,3);
     }
 
     @Test
@@ -134,8 +132,6 @@ public class PolynomialTest {
         Assertions.assertEquals(-7.0, p.get(2.0));
         Assertions.assertEquals(-5.0, p.get(1.0));
         Assertions.assertEquals(-1.0, p.get(0.0));
-
-        Latex.printLatex(Polynomial.toString(p));
     }
 
     @Test
@@ -147,23 +143,12 @@ public class PolynomialTest {
 
         Assertions.assertEquals(-1.0, mapList.get(0).get(0.0));
         Assertions.assertEquals(-2.0, mapList.get(1).get(0.0));
-        Assertions.assertEquals( 3.0, mapList.get(2).get(0.0));
+        Assertions.assertEquals(3.0, mapList.get(2).get(0.0));
     }
 
-    /*
-            toString p4 : (x^0+1x+x^2) like 1+x+x^2
-         */
     @Test
     void print() {
-        String expResult = "f(x) = 1+x+x^2";
+        String expResult = "L(x) = 1+x+x^2";
         Assertions.assertEquals(expResult, Polynomial.toString(p4));
-
-        Latex.printLatex(Polynomial.toString(p4));
     }
-
-    //todo: write normal tests for latex
-//    @Test
-//    void printLatex() {
-//        Polynomial.printLatex("hi", "target/testHI.png");
-//    }
 }
