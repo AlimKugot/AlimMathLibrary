@@ -1,4 +1,4 @@
-import alim.math.numbers.IntegerNumbers;
+import alim.math.numbers.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
