@@ -11,6 +11,7 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
       - image: cimg/openjdk:15.0
+    working_directory: ~/tmp
     steps:
       # Checkout the code as the first step.
       - checkout
@@ -22,6 +23,19 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+          - store_artifacts:
+              path: /tmp/artifact-1
+              destination: artifact-file
+
+          - store_artifacts:
+              path: /tmp/artifacts
 
 workflows:
   # Below is the definition of your workflow.
