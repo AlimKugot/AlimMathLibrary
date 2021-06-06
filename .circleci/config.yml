@@ -26,7 +26,7 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload:
-          file: ${project.build.directory}/jacoco.exec  
+          file: target/jacoco.exec  
       - store_artifacts:
           path: target
           
