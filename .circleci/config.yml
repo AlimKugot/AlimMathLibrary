@@ -27,8 +27,6 @@ jobs:
           command: mvn test
       - store_artifacts:
           path: target
-      - codecov/upload:
-          file: target/jacoco.exec
           
 workflows:
   # Below is the definition of your workflow.
