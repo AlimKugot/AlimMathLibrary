@@ -25,6 +25,9 @@ jobs:
           command: mvn test
       - store_artifacts:
           path: target
+      - run: |
+          CODECOV_TOKEN ='97469ee4-604a-4771-a43b-95924c85f4d5'
+          command: bash <(curl -s https://codecov.io/bash/CODECOV_TOKEN)
 
 workflows:
   # Below is the definition of your workflow.
