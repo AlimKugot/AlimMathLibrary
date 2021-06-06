@@ -2,6 +2,9 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@1.2.3
+
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
@@ -24,8 +27,6 @@ jobs:
           command: mvn test
       - store_artifacts:
           path: target
-      - run:
-          command: bash <(curl -s https://codecov.io/bash/97469ee4-604a-4771-a43b-95924c85f4d5)
 
 workflows:
   # Below is the definition of your workflow.
