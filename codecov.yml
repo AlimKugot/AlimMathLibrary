@@ -1,5 +1,4 @@
 codecov:
-  token: "<some token here>"
   bot: "codecov-io"
   strict_yaml_branch: "yaml-config"
   max_report_age: 24
