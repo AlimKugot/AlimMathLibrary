@@ -29,7 +29,6 @@ jobs:
           path: target
       - codecov/upload:
           file: target/jacoco.exec
-          token: $CODE_TOKEN
           
 workflows:
   # Below is the definition of your workflow.
