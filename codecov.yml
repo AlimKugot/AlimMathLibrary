@@ -1,7 +1,7 @@
 codecov:
   bot: "codecov-io"
   strict_yaml_branch: "yaml-config"
-  max_report_age: 24
+  max_report_age: off
   disable_default_path_fixes: false
   require_ci_to_pass: true
   notify:
