@@ -5,6 +5,13 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.2.2
 
+language: java
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+env:
+  global:
+    - CODECOV_TOKEN=:uuid-repo-token
+    
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
