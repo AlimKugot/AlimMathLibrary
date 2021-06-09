@@ -1,17 +1,6 @@
-package alim.math;
+package alim.math.coders;
 
-/**
- * Methods to work with Coders from Discrete Math
- *
- * Contains:
- * Gray's code
- * Reed Solomon error correction
- *
- * @author Alim Kugotov
- */
-public final class Coders {
-
-    //Code Gray
+public final class Gray {
 
     /**
      * Function to code to Gray's code
@@ -85,7 +74,4 @@ public final class Coders {
 
         return buffer;
     }
-
-    //Code Reed Solomon
-
 }

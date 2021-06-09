@@ -1,4 +1,4 @@
-package alim.math;
+package alim.math.polynomial;
 
 import java.text.DecimalFormat;
 import java.util.*;

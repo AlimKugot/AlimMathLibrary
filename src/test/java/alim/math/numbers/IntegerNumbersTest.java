@@ -1,9 +1,9 @@
-import alim.math.numbers.*;
+package alim.math.numbers;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class IntegerNumbersTest {
-
 
     @Test
     void gcd() {

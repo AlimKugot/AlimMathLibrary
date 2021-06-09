@@ -1,4 +1,5 @@
-import alim.math.*;
+package alim.math.polynomial;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
