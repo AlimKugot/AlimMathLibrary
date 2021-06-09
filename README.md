@@ -1,6 +1,6 @@
 # Проект
 
-<img src="http://ForTheBadge.com/images/badges/built-with-science.svg" alt="drawing" width="190"/>
+<img src="https://ForTheBadge.com/images/badges/built-with-science.svg" alt="drawing" width="190"/>
 
 [![<CircleCI>](https://circleci.com/gh/AlimKugot/HigherMathJava.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
@@ -59,7 +59,7 @@
 Чтоб понять, что происходит, давайте решим пример, как мы обычно это
 делаем на листочке 📝:
 
-![alim.math.matrix A](/img/slauCramer/matrix A.png)
+![alim.math.matrix A](/img/slauCramer/matrixA.png)
 
 Далее мы находим детерминанту `матрицы А` **без** последнего столбца 
 (`det All`):
