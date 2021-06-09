@@ -1,6 +1,6 @@
 # Проект
 
-![built](http://ForTheBadge.com/images/badges/built-with-science.svg)
+<img src="http://ForTheBadge.com/images/badges/built-with-science.svg" alt="drawing" width="190"/>
 
 [![<CircleCI>](https://circleci.com/gh/AlimKugot/HigherMathJava.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
