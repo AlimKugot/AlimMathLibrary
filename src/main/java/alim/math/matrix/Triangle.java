@@ -1,6 +1,6 @@
 package alim.math.matrix;
 
-import static alim.math.matrix.util.Copy.swapRow;
+import static alim.math.matrix.util.CopyMatrix.swapRow;
 
 /**
  * From any matrix to triangle matrix
@@ -38,6 +38,77 @@ public class Triangle {
                     matrix[ik][jk] -= toDiv * matrix[i][jk];
                 }
             }
+        }
+        return matrix;
+    }
+
+    /**
+     * Worst algorithm but it works
+     *
+     * @param matrix original
+     * @param row size
+     * @param col size
+     * @param Z residue ring
+     * @return triangle matrix in Z
+     */
+    public static int[][] toTriangleInRing(int[][] matrix, int row, int col, final int Z) {
+        boolean isAgain;
+        for (int m = 0; m < col - 1; m++) {
+            int n = 0;
+
+            boolean isFindN = true;
+            do {
+                while (n < row && matrix[n][m] == 0) n++;
+
+                int j;
+                for (j = 1; m - j >= 0; j++) {
+                    if (matrix[n][m-j] != 0) {
+                        n++;
+                        isFindN = false;
+                        break;
+                    }
+                }
+                if (m - j == -1) isFindN = true;
+            } while (!isFindN);
+
+            matrix[n][m] %= Z;
+            if (matrix[n][m] < 0) {
+                matrix[n][m] += Z;
+            }
+
+            do {
+                for (int i = 0; i < row; i++) {
+
+                    if (i == n) continue;
+
+                    matrix[i][m] %= Z;
+                    if (matrix[i][m] < 0) {
+                        matrix[i][m] += Z;
+                    }
+
+                    if (matrix[i][m] != 0) {
+                        //отними строку
+                        for (int j = m; j < col; j++) {
+                            matrix[i][j] -= matrix[n][j];
+                        }
+                    }
+                }
+
+                isAgain = false;
+                for (int i = 0; i < row; i++) {
+                    if (i != n && matrix[i][m] != 0) {
+                        isAgain = true;
+                        break;
+                    }
+                }
+            } while (isAgain);
+
+        }
+
+        //changes result in the right corner
+        for (int i = 0; i < row; i++) {
+            matrix[i][col-1] %= Z;
+            if (matrix[i][col-1] < 0) matrix[i][col-1] += Z;
         }
         return matrix;
     }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import static alim.math.matrix.Matrices.*;
 
-public class CopyTest {
+public class CopyMatrixTest {
 
     @BeforeEach
     void init() {
@@ -19,7 +19,7 @@ public class CopyTest {
         @Test
         @DisplayName("3x3")
         void swapRow3x3() {
-            int[][] res = Copy.swapRow(matrix3x3, 3, 3, 0, 2);
+            int[][] res = CopyMatrix.swapRow(matrix3x3, 3, 3, 0, 2);
             int[][] exp = new int[][]{
                     {7, 8, 9},
                     {4, 5, 6},
@@ -37,7 +37,7 @@ public class CopyTest {
                     {4.0, 8.0, 3.0, 2.0, 1.0},
                     {98.0, 82.0, 52.0, 36.0, 4.0}
             };
-            double[][] res = Copy.swapRow(doubleMatrix4x5, 4, 5, 1, 2);
+            double[][] res = CopyMatrix.swapRow(doubleMatrix4x5, 4, 5, 1, 2);
             Assertions.assertTrue(Arrays.deepEquals(exp, res));
         }
 
@@ -46,20 +46,20 @@ public class CopyTest {
 
             @Test
             void logic() {
-                int[][] res = Copy.swapRow(matrix3x3, 3, 3, 1, 1);
+                int[][] res = CopyMatrix.swapRow(matrix3x3, 3, 3, 1, 1);
                 Assertions.assertTrue(Arrays.deepEquals(matrix3x3, res));
             }
 
             @Test
             void doesntThrowArrayIndexOutOfBoundsException() {
                 Assertions.assertDoesNotThrow(
-                        () -> Copy.swapRow(matrix3x3, 1, 5, 2, 3));
+                        () -> CopyMatrix.swapRow(matrix3x3, 1, 5, 2, 3));
                 Assertions.assertDoesNotThrow(
-                        () -> Copy.swapRow(matrix3x3, -1, -5, -2, -3));
+                        () -> CopyMatrix.swapRow(matrix3x3, -1, -5, -2, -3));
                 Assertions.assertDoesNotThrow(
-                        () -> Copy.swapRow(doubleMatrix3x3, 1, 5, 2, 3));
+                        () -> CopyMatrix.swapRow(doubleMatrix3x3, 1, 5, 2, 3));
                 Assertions.assertDoesNotThrow(
-                        () -> Copy.swapRow(doubleMatrix3x3, -1, 5, 2, 3));
+                        () -> CopyMatrix.swapRow(doubleMatrix3x3, -1, 5, 2, 3));
             }
         }
     }
@@ -70,9 +70,9 @@ public class CopyTest {
         @Test
         @DisplayName("int matrices")
         void copyMatrixInt() {
-            int[][] res3x3 = Copy.copyMatrix(matrix3x3, 3, 3);
-            int[][] res4x4 = Copy.copyMatrix(matrix4x4, 4, 4);
-            int[][] res4x5 = Copy.copyMatrix(matrix4x5, 4, 5);
+            int[][] res3x3 = CopyMatrix.copyMatrix(matrix3x3, 3, 3);
+            int[][] res4x4 = CopyMatrix.copyMatrix(matrix4x4, 4, 4);
+            int[][] res4x5 = CopyMatrix.copyMatrix(matrix4x5, 4, 5);
 
             Assertions.assertTrue(Arrays.deepEquals(matrix3x3, res3x3));
             Assertions.assertNotEquals(matrix3x3, res3x3);
@@ -87,9 +87,9 @@ public class CopyTest {
         @Test
         @DisplayName("double matrices")
         void copyMatrixDouble() {
-            double[][] res3x3 = Copy.copyMatrix(doubleMatrix3x3, 3, 3);
-            double[][] res4x5 = Copy.copyMatrix(doubleMatrix4x5, 4, 5);
-            double[][] res3x3FirstZero = Copy.copyMatrix(doubleMatrix3x3FirstIsZero, 3, 3);
+            double[][] res3x3 = CopyMatrix.copyMatrix(doubleMatrix3x3, 3, 3);
+            double[][] res4x5 = CopyMatrix.copyMatrix(doubleMatrix4x5, 4, 5);
+            double[][] res3x3FirstZero = CopyMatrix.copyMatrix(doubleMatrix3x3FirstIsZero, 3, 3);
 
             Assertions.assertTrue(Arrays.deepEquals(doubleMatrix3x3, res3x3));
             Assertions.assertNotEquals(doubleMatrix3x3, res3x3);
@@ -103,18 +103,18 @@ public class CopyTest {
 
         @Nested
         @DisplayName("int matrix to double")
-        class CopyIntToDouble {
+        class CopyMatrixIntToDouble {
 
             @DisplayName("null")
             @Test
             void copyIntMatrixToDoubleNull() {
-                Assertions.assertNull(Copy.copyIntMatrixToDouble(null, 3, 4));
+                Assertions.assertNull(CopyMatrix.copyIntMatrixToDouble(null, 3, 4));
             }
 
             @DisplayName("4x5")
             @Test
             void copyIntMatrixToDouble4x5() {
-                double[][] res4x5 = Copy.copyIntMatrixToDouble(matrix4x5, 4, 5);
+                double[][] res4x5 = CopyMatrix.copyIntMatrixToDouble(matrix4x5, 4, 5);
                 Assertions.assertNotNull(res4x5);
 
                 for (int i = 0; i < 4; i++) {
@@ -127,7 +127,7 @@ public class CopyTest {
             @DisplayName(("3x3"))
             @Test
             void copyIntMatrixToDouble3x3() {
-                double[][] res3x3 = Copy.copyIntMatrixToDouble(matrix3x3, 3, 3);
+                double[][] res3x3 = CopyMatrix.copyIntMatrixToDouble(matrix3x3, 3, 3);
                 Assertions.assertNotNull(res3x3);
 
                 for (int i = 0; i < 3; i++) {

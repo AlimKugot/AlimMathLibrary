@@ -10,7 +10,7 @@ import java.io.*;
 
 import static alim.math.matrix.Matrices.*;
 
-public class PrinterTest {
+public class PrinterMatrixTest {
     OutputStream os = new ByteArrayOutputStream();
 
     @BeforeEach
@@ -23,21 +23,21 @@ public class PrinterTest {
     @DisplayName("doesn't expect any exception")
     void print() {
         Assertions.assertDoesNotThrow(() ->
-                Printer.print(os, matrix3x3, 3, 3));
+                PrinterMatrix.print(os, matrix3x3, 3, 3));
         Assertions.assertDoesNotThrow(() ->
-                Printer.print(os, matrix3x3, 2, 2));
+                PrinterMatrix.print(os, matrix3x3, 2, 2));
 
         Assertions.assertDoesNotThrow(() ->
-                Printer.print(os, doubleMatrix3x3, 3, 3));
+                PrinterMatrix.print(os, doubleMatrix3x3, 3, 3));
         Assertions.assertDoesNotThrow(() ->
-                Printer.print(os, doubleMatrix3x3, 2, 2));
+                PrinterMatrix.print(os, doubleMatrix3x3, 2, 2));
     }
 
     @Test
     void arrayIndexOfBoundException() {
         Assertions.assertThrows(IndexOutOfBoundsException.class,
-                () -> Printer.print(os, matrix3x3, 2, 8));
+                () -> PrinterMatrix.print(os, matrix3x3, 2, 8));
 
-        Assertions.assertDoesNotThrow(() -> Printer.print(os, matrix4x5, -1, 22));
+        Assertions.assertDoesNotThrow(() -> PrinterMatrix.print(os, matrix4x5, -1, 22));
     }
 }

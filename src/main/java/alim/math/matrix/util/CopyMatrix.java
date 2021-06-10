@@ -1,6 +1,6 @@
 package alim.math.matrix.util;
 
-public class Copy {
+public class CopyMatrix {
 
     /**
      * Swap two rows

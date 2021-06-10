@@ -9,6 +9,7 @@ import java.awt.*;
  * Library to beautiful print in the latex
  */
 public class Latex {
+    final static String author = "\\\\ \\\\ by \\@AlimKugot";
     public static final String DEFAULT_FOLDER_TO_SAVE = "target/ResultLatex.png";
 
     /**
@@ -17,7 +18,7 @@ public class Latex {
      * @param latex string to print in the latex format
      */
     public static void printLatex(String latex) {
-        TeXFormula formula = new TeXFormula(latex);
+        TeXFormula formula = new TeXFormula(latex + author);
         formula.createPNG(TeXConstants.STYLE_DISPLAY, 20, DEFAULT_FOLDER_TO_SAVE, Color.WHITE, Color.BLACK);
     }
 

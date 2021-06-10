@@ -1,6 +1,6 @@
 package alim.math.matrix;
 
-import alim.math.matrix.util.Copy;
+import alim.math.matrix.util.CopyMatrix;
 
 /**
  * Determinant of matrices
@@ -27,7 +27,7 @@ public final class Determinant {
         }
 
         for (int i = 0; i < size; i++) {
-            int[][] submatrixCurrent = Copy.submatrix(matrix, size, 0, i);
+            int[][] submatrixCurrent = CopyMatrix.submatrix(matrix, size, 0, i);
             det += (i % 2 == 0 ? 1 : -1) * matrix[0][i] * detMatrix(submatrixCurrent, size - 1);
         }
         return det;

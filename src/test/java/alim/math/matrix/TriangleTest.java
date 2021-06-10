@@ -1,12 +1,10 @@
 package alim.math.matrix;
 
-import alim.math.matrix.util.Printer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 import static alim.math.matrix.Matrices.*;
