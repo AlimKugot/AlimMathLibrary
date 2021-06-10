@@ -4,6 +4,3 @@
 
 #IDEA's files
 *.iml
-
-#examples for university
-/src/test/java/ForTeacher2.java
