@@ -1,9 +1,6 @@
 package alim.math.matrix;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 
@@ -41,15 +38,4 @@ public class TriangleTest {
 
         Assertions.assertTrue(Arrays.deepEquals(exp, res));
     }
-
-//    @Test
-//    void f() {
-//        todo: it doesn't work
-//        double[][] res = Triangle.toUpperTriangularMatrix(doubleMatrix4x5, 4, 5);
-//        try {
-//            Printer.print(System.out, res, 4, 5);
-//        } catch (IOException io) {
-//
-//        }
-//    }
 }

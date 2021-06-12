@@ -9,7 +9,9 @@ import java.awt.*;
  * Library to beautiful print in the latex
  */
 public class Latex {
-    final static String author = "\\\\ \\\\ by \\@AlimKugot";
+//    final static String author = "\\\\ \\\\ by \\@AlimKugot";
+    final static String author = "\\\\ \\\\ by \\ AlimKugot";
+
     public static final String DEFAULT_FOLDER_TO_SAVE = "target/ResultLatex.png";
 
     /**
