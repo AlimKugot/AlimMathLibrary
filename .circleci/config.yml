@@ -4,41 +4,35 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@1.2.3
-    
+  
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: cimg/openjdk:11.0
     steps:
-    - checkout
-    - run:
+      - checkout
+      - run:
           name: Build
           command: mvn -B -DskipTests
-
-  test-and-coverage:
-    docker:
-      - image: cimg/openjdk:11.0
-    steps:
-    - run:
+      - run:
           name: Test
           command: mvn test
-    - store_artifacts:
+      - store_artifacts:
           path: target
-    - codecov/upload:
+      - codecov/upload:
           file: target/jacoco.exec
 
   clean:
     docker:
       - image: cimg/openjdk:11.0
     steps:
-    - run:
+      - run:
           name: Clean
           command: mvn clean package
-    
-          
+
+
 workflows:
-Z  sample:
+  sample:
     jobs:
-      - build
-      - test-and-coverage
+      - build-and-test
       - clean
