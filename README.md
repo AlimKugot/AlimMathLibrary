@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.com/AlimKugot/HigherMathJava.svg?branch=master)](https://travis-ci.com/AlimKugot/HigherMathJava)
 [![codecov](https://codecov.io/gh/AlimKugot/HigherMathJava/branch/master/graph/badge.svg?token=009BFV5P27)](https://codecov.io/gh/AlimKugot/HigherMathJava)
-[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 
 **Что это** 👷 : Программа решает задачи алгебры и дискретной математики
 
