@@ -2,7 +2,7 @@
 
 <img src="https://ForTheBadge.com/images/badges/built-with-science.svg" alt="drawing" width="190"/>
 
-[![<CircleCI>](https://circleci.com/gh/AlimKugot/HigherMathJava.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![Build Status](https://travis-ci.com/AlimKugot/HigherMathJava.svg?branch=master)](https://travis-ci.com/AlimKugot/HigherMathJava)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 
 **Что это** 👷 : Программа решает задачи алгебры и дискретной математики
