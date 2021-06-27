@@ -4,9 +4,7 @@ sudo: false # faster builds
 jdk:
   - oraclejdk11
 
-env:
-  global:
-    - CODECOV_TOKEN=:uuid-repo-token
+script: mvn clean verify
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
