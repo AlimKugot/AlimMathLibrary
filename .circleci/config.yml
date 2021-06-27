@@ -6,12 +6,6 @@ orbs:
   codecov: codecov/codecov@1.2.3
     
 jobs:
-  coverage:
-    docker:
-     - image: cimg/base
-    steps:
-      - codecov/upload:
-          file: target/jacoco.exec
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
     # These next lines define a Docker executor: https://circleci.com/docs/2.0/executor-types/
@@ -33,6 +27,8 @@ jobs:
           command: mvn test
       - store_artifacts:
           path: target
+      - codecov/upload:
+          file: target/jacoco.exec
       
     
           
@@ -43,5 +39,4 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   sample:
     jobs:
-      - coverage
       - build-and-test     
