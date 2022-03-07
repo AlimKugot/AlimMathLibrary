@@ -19,8 +19,8 @@ public final class Gray {
      * @return result of the encoding
      */
     public static int encodeGray(String binaryX) {
-        int x = Integer.parseInt(binaryX, 2);
-        return encodeGray(x);
+        long x = Long.parseLong(binaryX, 2);
+        return encodeGray((int) x);
     }
 
     /**
@@ -31,8 +31,8 @@ public final class Gray {
      * @return result in the string's format
      */
     public static StringBuffer encodeGray(String binaryX, StringBuffer buffer) {
-        int x = Integer.parseInt(binaryX, 2);
-        return encodeGray(x, buffer);
+        long x = Long.parseLong(binaryX, 2);
+        return encodeGray((int) x, buffer);
     }
 
     /**
@@ -57,6 +57,8 @@ public final class Gray {
      * @return result of the encoding
      */
     public static StringBuffer encodeGray(int x, StringBuffer buffer) {
+        if (x <= 0) return buffer.append("0\n");
+
         int b = 0;
         int length = Integer.toBinaryString(x).length();
 
