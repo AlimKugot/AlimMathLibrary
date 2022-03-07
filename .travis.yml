@@ -1,8 +1,9 @@
 language: java
+dist: xenial
 sudo: false # faster builds
 
 jdk:
-  - oraclejdk11
+  - openjdk11
 
 script: mvn clean verify test
 
