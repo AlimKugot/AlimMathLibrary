@@ -1,7 +1,7 @@
 # Higher Math
 
 [![Build Status](https://app.travis-ci.com/AlimKugot/Math.svg?branch=master)](https://app.travis-ci.com/AlimKugot/Math)
-[![codecov](https://codecov.io/gh/AlimKugot/HigherMathJava/branch/master/graph/badge.svg?token=009BFV5P27)](https://codecov.io/gh/AlimKugot/HigherMathJava)
+[![codecov](https://codecov.io/gh/AlimKugot/Math/branch/master/graph/badge.svg?token=009BFV5P27)](https://codecov.io/gh/AlimKugot/Math)
 
 **Что это** 👷 : Программа решает задачи алгебры, дискретной математики и теории графов
 
